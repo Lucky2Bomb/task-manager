@@ -8,11 +8,9 @@ const queryClient = new QueryClient();
 
 export const App = () => (
   <React.StrictMode>
-    <BrowserRouter>
-      <QueryClientProvider client={queryClient}>
-        <CssBaseline />
-        <Routing />
-      </QueryClientProvider>
-    </BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <CssBaseline />
+      <Routing />
+    </QueryClientProvider>
   </React.StrictMode>
 );
