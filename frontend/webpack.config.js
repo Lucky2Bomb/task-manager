@@ -6,8 +6,6 @@ if (process.env.NODE_ENV === "production") {
   mode = "production";
 }
 
-console.log(__dirname);
-
 module.exports = {
   mode,
   entry: "./src/index.tsx",
