@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "umd",
+    "module": "ESNext",
     "lib": ["ESNext", "dom"],
     "jsx": "react",
     "noEmit": true,
@@ -19,5 +19,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "environment.d.ts"],
+  "exclude": ["node_modules"]
 }
