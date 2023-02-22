@@ -7,6 +7,7 @@ import { Task } from '@/share/api/models';
 import TaskCardModal from '@/entities/task/ui/task-modal';
 
 const task: Task = {
+    id: 1,
     name: "title",
     description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus maxime omnis iste qui quidem commodi molestias modi quia reprehenderit beatae quod totam vero natus a, sit animi iure deserunt facilis.",
     duration: 600,
@@ -32,12 +33,12 @@ function Home() {
                     add task
                 </Button>
             </Box>
-            <TaskCard {...task} onClick={() => handleSelect(task)} />
-            <TaskCard {...task} />
-            <TaskCard {...task} />
-            <TaskCard {...task} />
-            <TaskCard {...task} />
-            <TaskCardModal {...task} setOpen={setOpen} open={open} />
+            <TaskCard task={task} onClick={() => handleSelect(task)} />
+            <TaskCard task={task} />
+            <TaskCard task={task} />
+            <TaskCard task={task} />
+            <TaskCard task={task} />
+            <TaskCardModal task={task} setOpen={setOpen} open={open} />
         </Layout>
     );
 }

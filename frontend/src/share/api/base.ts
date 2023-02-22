@@ -1,7 +1,8 @@
 import axios from "axios";
+import { API_HOST } from "../config";
 
-const instance = axios.create({
-    baseURL: 'https://some-domain.com/api/',
+export const axiosInstance = axios.create({
+    baseURL: `${API_HOST}/api/v1/`,
     timeout: 1000,
     headers: {'X-Custom-Header': 'foobar'}
   });

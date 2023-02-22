@@ -1,8 +1,9 @@
-import React, { lazy } from 'react';
-import { Routes, Route, createBrowserRouter, RouterProvider } from 'react-router-dom';
+import React from 'react';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Home from './home';
 import Login from './login';
 import Settings from './settings';
+import Sandbox from './sandbox';
 
 const router = createBrowserRouter([{
     path: "/",
@@ -15,6 +16,10 @@ const router = createBrowserRouter([{
 {
     path: "/settings",
     element: <Settings />,   
+},
+{
+    path: "/sandbox",
+    element: <Sandbox />,   
 },
 ])
 
