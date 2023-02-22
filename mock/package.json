@@ -1,0 +1,14 @@
+{
+  "name": "mock",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "mock": "json-mock-api -c --port 8000 --directory ."
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-mock-api": "^1.2.2"
+  }
+}

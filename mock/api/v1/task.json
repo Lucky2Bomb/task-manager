@@ -1,0 +1,37 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "task #1",
+            "description": "description of task 1",
+            "photo_url": null,
+            "duration": 1000,
+            "deadline": "Wed, 22 Feb 2023 10:45:04 GMT",
+            "user_id": 1,
+            "party_id": 1,
+            "status_id": 2
+        },
+        {
+            "id": 2,
+            "name": "task #2",
+            "description": "description of task 2",
+            "photo_url": null,
+            "duration": 600,
+            "deadline": "Wed, 27 Feb 2023 22:15:55 GMT",
+            "user_id": 1,
+            "party_id": 1,
+            "status_id": 1
+        },
+        {
+            "id": 3,
+            "name": "task #3",
+            "description": "description of task 3",
+            "photo_url": null,
+            "duration": 600,
+            "deadline": "Wed, 24 Feb 2023 11:11:11 GMT",
+            "user_id": 1,
+            "party_id": 1,
+            "status_id": 1
+        }
+    ]
+}
