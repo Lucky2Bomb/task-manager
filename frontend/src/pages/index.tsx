@@ -1,32 +1,31 @@
-import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Home from './home';
-import Login from './login';
-import Settings from './settings';
-import Sandbox from './sandbox';
+import React from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./home";
+import Login from "./login";
+import Settings from "./settings";
+import Sandbox from "./sandbox";
 
-const router = createBrowserRouter([{
+const router = createBrowserRouter([
+  {
     path: "/",
-    element: <Home />,   
-},
-{
+    element: <Home />,
+  },
+  {
     path: "/login",
-    element: <Login />,   
-},
-{
+    element: <Login />,
+  },
+  {
     path: "/settings",
-    element: <Settings />,   
-},
-{
+    element: <Settings />,
+  },
+  {
     path: "/sandbox",
-    element: <Sandbox />,   
-},
-])
+    element: <Sandbox />,
+  },
+]);
 
-function Routing() {
-    return (
-        <RouterProvider router={router} />
-    );
+function Routing(): JSX.Element {
+  return <RouterProvider router={router} />;
 }
 
-export default Routing; 
+export default Routing;

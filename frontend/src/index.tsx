@@ -4,7 +4,7 @@ import { App } from "./app";
 
 const rootNode = document.getElementById("app");
 
-if (rootNode) {
+if (rootNode != null) {
   createRoot(rootNode).render(<App />);
 } else {
   alert("<div id='app'> not founded");

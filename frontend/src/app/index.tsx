@@ -1,12 +1,11 @@
 import Routing from "@/pages";
-import { Button, CssBaseline } from "@mui/material";
+import { CssBaseline } from "@mui/material";
 import React from "react";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { BrowserRouter } from "react-router-dom";
 
 const queryClient = new QueryClient();
 
-export const App = () => (
+export const App = (): JSX.Element => (
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <CssBaseline />

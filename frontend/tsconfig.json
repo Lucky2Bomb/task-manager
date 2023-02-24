@@ -17,7 +17,7 @@
     "esModuleInterop": true,
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
   },
   "include": ["src", "environment.d.ts"],
   "exclude": ["node_modules"]

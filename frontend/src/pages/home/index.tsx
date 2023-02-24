@@ -1,46 +1,66 @@
-import { Box, Button, Stack } from '@mui/material';
-import AddIcon from '@mui/icons-material/Add';
-import React, { useState } from 'react';
-import { TaskCard } from '@/entities/task/ui';
-import Layout from '@/widget/layout';
-import { Task } from '@/share/api/models';
-import TaskCardModal from '@/entities/task/ui/task-modal';
+import { Box, Button } from "@mui/material";
+import AddIcon from "@mui/icons-material/Add";
+import React from "react";
+import { TaskCard } from "@/entities/task/ui";
+import Layout from "@/widget/layout";
+import { type Task } from "@/shared/api/models";
+import { useTaskModalStore } from "@/widget/change-task-modal/model";
+import TaskModal from "@/widget/change-task-modal/ui";
+import { useQuery } from "react-query";
+import { axiosInstance } from "@/shared/api/base";
 
-const task: Task = {
-    id: 1,
-    name: "title",
-    description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus maxime omnis iste qui quidem commodi molestias modi quia reprehenderit beatae quod totam vero natus a, sit animi iure deserunt facilis.",
-    duration: 600,
-    deadline: new Date(new Date().setHours(new Date().getHours() + 16)),
-    party_id: -1,
-    status_id: -1,
-    user_id: -1,
-};
+function Home(): JSX.Element {
+  const state = useTaskModalStore();
 
-function Home() {
-    const [open, setOpen] = useState(false);
-    const [selectedTask, setSelectedTask] = useState<Task | null>(null);
+  const { isLoading, data } = useQuery(
+    "tasks",
+    async () =>
+      await axiosInstance<{ data: Task[] }>("/task", {
+        method: "GET",
+      }).then((res) => res.data.data),
+  );
 
-    const handleSelect = (task: Task) => {
-        setSelectedTask(task);
-        setOpen(true);
-    }
+  const handleSelectTask = (task: Task): void => {
+    state.selectTask(task);
+    state.setMode("edit");
+    state.setOpen(true);
+  };
 
-    return (
-        <Layout>
-            <Box>
-                <Button variant="contained" startIcon={<AddIcon />}>
-                    add task
-                </Button>
-            </Box>
-            <TaskCard task={task} onClick={() => handleSelect(task)} />
-            <TaskCard task={task} />
-            <TaskCard task={task} />
-            <TaskCard task={task} />
-            <TaskCard task={task} />
-            <TaskCardModal task={task} setOpen={setOpen} open={open} />
-        </Layout>
-    );
+  const handleAddTask = (): void => {
+    state.resetTask();
+    state.setMode("create");
+    state.setOpen(true);
+  };
+
+  if (isLoading || typeof data === "undefined") {
+    return <>is loading...</>;
+  }
+
+  return (
+    <Layout>
+      <Box>
+        <Button
+          variant="contained"
+          startIcon={<AddIcon />}
+          onClick={handleAddTask}
+        >
+          add task
+        </Button>
+      </Box>
+
+      {data.map((item) => (
+        <TaskCard
+          key={`${item.id}_${item.name}`}
+          task={item}
+          onClick={() => {
+            handleSelectTask(item);
+          }}
+        />
+      ))}
+
+      <TaskModal />
+    </Layout>
+  );
 }
 
 export default Home;
