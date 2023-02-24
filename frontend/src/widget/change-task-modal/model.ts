@@ -30,17 +30,17 @@ export const useTaskModalStore = create<TaskModalState>()(
       },
       mode: "edit",
       setOpen: (open) => {
-        set((state) => {
+        set(() => {
           return { open };
         });
       },
       selectTask: (newTask) => {
-        set((state) => {
+        set(() => {
           return { task: newTask };
         });
       },
       resetTask: () => {
-        set((state) => {
+        set(() => {
           return {
             task: {
               id: -1,
@@ -56,7 +56,7 @@ export const useTaskModalStore = create<TaskModalState>()(
         });
       },
       setMode: (mode) => {
-        set((state) => {
+        set(() => {
           return { mode };
         });
       },
