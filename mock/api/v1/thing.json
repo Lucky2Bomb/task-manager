@@ -1,0 +1,49 @@
+{
+    "data": [
+        {
+            "id": 1,
+            "name": "thing #1",
+            "description": "description of thing 1",
+            "photo_url": null,
+            "duration": 600,
+            "user_id": 1,
+            "type_id": 1
+        },
+        {
+            "id": 2,
+            "name": "thing #2",
+            "description": "description of thing 2",
+            "photo_url": null,
+            "duration": 600,
+            "user_id": 1,
+            "type_id": 1
+        },
+        {
+            "id": 3,
+            "name": "thing #3",
+            "description": "description of thing 3",
+            "photo_url": null,
+            "duration": 600,
+            "user_id": 1,
+            "type_id": 2
+        },
+        {
+            "id": 4,
+            "name": "thing #4",
+            "description": "description of thing 4",
+            "photo_url": null,
+            "duration": 600,
+            "user_id": 1,
+            "type_id": 3
+        },
+        {
+            "id": 5,
+            "name": "thing #5",
+            "description": "description of thing 5",
+            "photo_url": null,
+            "duration": 50,
+            "user_id": 1,
+            "type_id": 3
+        }
+    ]
+}
