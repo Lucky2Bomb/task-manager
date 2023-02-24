@@ -4,12 +4,13 @@ import { useQuery } from "react-query";
 import { axiosInstance } from "@/shared/api/base";
 import { type Status } from "@/shared/api/models";
 import {
+  Box,
   FormControlLabel,
   FormLabel,
   Radio,
   RadioGroup,
-  Skeleton,
 } from "@mui/material";
+import SkeletonList from "@/shared/ui/skeleton-list";
 
 interface Props {
   value: number;
@@ -25,26 +26,21 @@ function RadioStatus({ value, setValue }: Props): JSX.Element {
   });
 
   if (isLoading || typeof data === "undefined") {
-    return <>is loading...</>;
+    return (
+      <Box display="grid" rowGap={2}>
+        <SkeletonList count={3} height={30} />
+      </Box>
+    );
   }
 
-  const items =
-    isLoading || typeof data === "undefined" ? (
-      <>
-        <Skeleton />
-        <Skeleton />
-        <Skeleton />
-      </>
-    ) : (
-      data.map((item) => (
-        <FormControlLabel
-          key={`${item.id}_${item.name}`}
-          value={item.id}
-          label={item.name}
-          control={<Radio />}
-        />
-      ))
-    );
+  const items = data.map((item) => (
+    <FormControlLabel
+      key={`${item.id}_${item.name}`}
+      value={item.id}
+      label={item.name}
+      control={<Radio />}
+    />
+  ));
 
   return (
     <FormControl sx={{ m: 1 }}>
