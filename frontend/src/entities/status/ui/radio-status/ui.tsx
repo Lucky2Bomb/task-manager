@@ -19,10 +19,10 @@ interface Props {
 
 function RadioStatus({ value, setValue }: Props): JSX.Element {
   const { isLoading, data } = useQuery("statuses-of-task", async () => {
-    const res = await axiosInstance<{ data: Status[] }>("/status", {
+    const res = await axiosInstance<{ results: Status[] }>("/status", {
       method: "GET",
     });
-    return res.data.data;
+    return res.data.results;
   });
 
   if (isLoading || typeof data === "undefined") {

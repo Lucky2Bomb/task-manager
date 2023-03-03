@@ -23,7 +23,7 @@ function TaskModal() {
           />
         </Box>
         <Box display="flex" flexDirection="column" gap={1}>
-          <Button variant="contained">{mode}</Button>
+          <Button variant="contained">save</Button>
           <Button
             variant="outlined"
             onClick={() => {

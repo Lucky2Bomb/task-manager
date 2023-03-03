@@ -15,9 +15,9 @@ function Home(): JSX.Element {
   const { isLoading, data } = useQuery(
     "tasks",
     async () =>
-      await axiosInstance<{ data: Task[] }>("/task", {
+      await axiosInstance<{ results: Task[] }>("/task", {
         method: "GET",
-      }).then((res) => res.data.data),
+      }).then((res) => res.data.results),
   );
 
   const handleSelectTask = (task: Task): void => {
