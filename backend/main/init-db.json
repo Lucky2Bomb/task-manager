@@ -1,0 +1,121 @@
+[
+    {
+        "model": "task.status",
+        "pk": 1,
+        "fields": {
+            "name": "failed"
+        }
+    },
+    {
+        "model": "task.status",
+        "pk": 2,
+        "fields": {
+            "name": "in progress"
+        }
+    },
+    {
+        "model": "task.status",
+        "pk": 3,
+        "fields": {
+            "name": "done"
+        }
+    },
+    {
+        "model": "thing.type",
+        "pk": 1,
+        "fields": {
+            "name": "success award"
+        }
+    },
+    {
+        "model": "thing.type",
+        "pk": 2,
+        "fields": {
+            "name": "failure award"
+        }
+    },
+    {
+        "model": "thing.type",
+        "pk": 3,
+        "fields": {
+            "name": "inventory item"
+        }
+    },
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$390000$2EGQ7Np1ps67aEyzxfclvi$miQRuC68PLZk47QmitfJsDFidmSNvIQqkxqFpR7qfCg=",
+            "last_login": "2023-03-03T05:25:34.014Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2023-03-03T05:25:15.970Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "party.party",
+        "pk": 1,
+        "fields": {
+            "name": "Party #1",
+            "author_id": 1,
+            "user": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "task.task",
+        "pk": 1,
+        "fields": {
+            "name": "Task #1",
+            "description": "Vestibulum quis nulla dapibus, vehicula risus sit amet, condimentum ipsum. Suspendisse luctus ornare purus, imperdiet maximus ligula faucibus quis. Nullam lectus elit, mollis sed odio eu, posuere feugiat justo. Phasellus quis augue quam. Phasellus luctus tellus eget purus vulputate elementum. Phasellus risus est, feugiat tempor massa rutrum, vulputate vestibulum erat. Mauris at tellus sit amet diam aliquet consectetur. Integer ut egestas odio. Suspendisse quam tellus, luctus ut imperdiet ut, ullamcorper nec lorem. Nam at consequat augue. Maecenas aliquam justo nec dictum aliquet. Curabitur ut faucibus lacus. Nullam mollis nunc non pulvinar laoreet. Nullam tempus neque sed ipsum vehicula, a consectetur sapien imperdiet. Aenean nulla est, gravida vitae justo semper, tempus iaculis mauris. Vestibulum porta tortor vel mauris condimentum tempor.",
+            "duration": 500,
+            "deadline": "2023-03-03T09:32:39.788Z",
+            "photo_url": "",
+            "user": 1,
+            "status": 2,
+            "party": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "task.task",
+        "pk": 2,
+        "fields": {
+            "name": "Task #2",
+            "description": "In pretium neque nec rutrum tempus. Fusce rutrum risus quis porttitor tristique. Praesent eu mi fermentum leo vestibulum elementum nec sit amet sapien. Pellentesque vel ligula dignissim, faucibus libero vitae, facilisis nisl. Aliquam finibus id justo viverra mattis. Integer tempus condimentum erat. Phasellus feugiat lectus eu hendrerit vehicula.",
+            "duration": 1500,
+            "deadline": "2023-03-03T09:36:18.494Z",
+            "photo_url": "",
+            "user": null,
+            "status": 2,
+            "party": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "task.task",
+        "pk": 3,
+        "fields": {
+            "name": "Task 3",
+            "description": "Duis commodo tortor vel neque suscipit, tincidunt volutpat nunc scelerisque. Morbi pretium sollicitudin erat id accumsan. Fusce euismod quam nunc, eu lobortis tellus consequat sed. Pellentesque volutpat felis sit amet urna maximus viverra. Praesent blandit sollicitudin erat vel ornare. Phasellus mi nisi, convallis eu enim id, finibus pharetra nulla. Donec porttitor id magna in sodales. Nulla non massa leo. Nam nec placerat nisi. Maecenas fringilla euismod ante et dignissim. Integer luctus est nec sapien facilisis laoreet. Quisque sit amet lobortis justo. Maecenas interdum lorem dolor, et accumsan est semper posuere. Donec in nibh pulvinar, ultricies mauris vel, mollis tortor. Proin condimentum lectus erat, at interdum risus cursus finibus. Quisque vel blandit est, quis ullamcorper purus.\r\n\r\nAliquam erat volutpat. In tincidunt magna eu velit interdum luctus. Pellentesque nulla massa, pulvinar et faucibus nec, venenatis finibus orci. Ut ex massa, laoreet et ullamcorper et, tristique sit amet lorem. Praesent molestie orci diam, id ultricies ipsum iaculis id. Fusce pellentesque metus ut purus mattis ornare. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eget nisl massa. Morbi imperdiet mi eu metus laoreet efficitur. Cras interdum euismod fringilla. Donec euismod nisi quis mi pellentesque gravida.\r\n\r\nVivamus ex tellus, lacinia sed libero nec, finibus rhoncus ante. Integer dictum, augue nec euismod pretium, erat nibh accumsan dui, in pellentesque dui nunc egestas felis. Curabitur in turpis ligula. Sed elementum nulla id diam pharetra sagittis. Duis porttitor hendrerit purus a ullamcorper. In pretium lobortis eros luctus congue. Cras iaculis sem vitae aliquam lobortis. Vivamus ornare lectus quis elit semper, mollis posuere tortor euismod. Nam mattis enim tortor, a rutrum erat ornare a. Pellentesque ac finibus nulla, eget pharetra risus. Fusce dapibus, nibh in porta elementum, eros ex luctus urna, vel interdum nibh sapien sit amet eros.",
+            "duration": 360,
+            "deadline": "2023-03-03T09:36:53.105Z",
+            "photo_url": "",
+            "user": 1,
+            "status": 2,
+            "party": [
+                1
+            ]
+        }
+    }
+]

@@ -1,6 +1,8 @@
 from django.db import models
 from django.conf import settings
 
+import uuid
+import os
 
 class Type(models.Model):
     name = models.CharField(max_length=30, unique=True)
@@ -8,7 +10,9 @@ class Type(models.Model):
         return self.name
 
 def upload_to(instance, filename):
-    return 'images/{filename}'.format(filename=filename)
+    ext = filename.split('.')[-1]
+    filename = "%s.%s" % (uuid.uuid4(), ext)
+    return os.path.join('images', filename)
 
 class Thing(models.Model):
     name = models.CharField(max_length=30, unique=True)
