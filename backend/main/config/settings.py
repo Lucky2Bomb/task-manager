@@ -165,4 +165,5 @@ REST_KNOX = {
     'TOKEN_LIMIT_PER_USER': None, # By default, this option is disabled and set to None -- thus no limit.
     'AUTO_REFRESH': False, # This defines if the token expiry time is extended by TOKEN_TTL each time the token is used.
     'EXPIRY_DATETIME_FORMAT': api_settings.DATETIME_FORMAT,
+    'AUTH_HEADER_PREFIX': 'Bearer',
 }

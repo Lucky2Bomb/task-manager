@@ -7,5 +7,4 @@ from task.serializers import TaskSerializer
 class TaskAPIView(generics.ListCreateAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
-    # permission_classes = (IsAuthenticated,)
-    
+    permission_classes = (IsAuthenticated,)

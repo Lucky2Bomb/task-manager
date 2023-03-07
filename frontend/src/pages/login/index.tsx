@@ -1,12 +1,17 @@
-import { Container, TextField } from "@mui/material";
+import { LoginForm } from "@/features/login";
+import { LoginButton } from "@/features/login/login-button";
+import Layout from "@/widget/layout";
+import { Container } from "@mui/material";
 import React from "react";
 
 function Login(): JSX.Element {
   return (
-    <Container>
-      <TextField type="text" placeholder="login" />
-      <TextField type="password" placeholder="password" />
-    </Container>
+    <Layout>
+      <Container maxWidth="xs">
+        <LoginForm />
+        <LoginButton />
+      </Container>
+    </Layout>
   );
 }
 
