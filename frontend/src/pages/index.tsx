@@ -1,21 +1,22 @@
 import React from "react";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Home from "./home";
-import Login from "./login";
+import LoginPage from "./login";
 import Settings from "./settings";
 import Sandbox from "./sandbox";
+import { routes } from "@/shared/config/routes";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: routes.HOME,
     element: <Home />,
   },
   {
-    path: "/login",
-    element: <Login />,
+    path: routes.LOGIN,
+    element: <LoginPage />,
   },
   {
-    path: "/settings",
+    path: routes.SETTINGS,
     element: <Settings />,
   },
   {
