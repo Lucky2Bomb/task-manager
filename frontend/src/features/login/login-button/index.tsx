@@ -1,7 +1,11 @@
 import { axiosInstance } from "@/shared/api/base";
+import { routes } from "@/shared/config/routes";
+import { useKeydownEvent } from "@/shared/hooks/useKeydownEvent";
 import { Button, type ButtonProps, CircularProgress } from "@mui/material";
 import React from "react";
-import { useMutation, useQuery } from "react-query";
+import { useMutation } from "react-query";
+import { useNavigate } from "react-router-dom";
+import { useLoginStore } from "../model";
 
 export const LoginButton = ({
   startIcon = <CircularProgress color="inherit" size="20px" />,
@@ -9,8 +13,10 @@ export const LoginButton = ({
   fullWidth = true,
   ...props
 }: ButtonProps) => {
-  const { isLoading, data, mutate } = useMutation({
-    mutationFn: async () =>
+  const navigate = useNavigate();
+  const { username, password } = useLoginStore();
+  const { isLoading, mutate } = useMutation({
+    mutationFn: async () => {
       await axiosInstance<{
         user: {
           id: number;
@@ -19,8 +25,29 @@ export const LoginButton = ({
         token: string;
       }>("/login", {
         method: "POST",
-      }).then((res) => res.data),
+        data: {
+          username,
+          password,
+        },
+      })
+        .then((res) => {
+          localStorage.setItem("access", res.data.token);
+          return res.data;
+        })
+        .then(() => {
+          navigate(routes.LOGIN);
+        });
+    },
   });
+
+  const onKeydownEnter = (e: KeyboardEvent) => {
+    if (e.key === "Enter") {
+      mutate();
+    }
+  };
+
+  useKeydownEvent(onKeydownEnter);
+
   return (
     <Button
       startIcon={isLoading ? startIcon : null}
@@ -30,8 +57,9 @@ export const LoginButton = ({
       onClick={() => {
         mutate();
       }}
+      disabled={username.length < 3 || password.length < 3}
     >
-      Login
+      login
     </Button>
   );
 };
